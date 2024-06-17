@@ -5,13 +5,14 @@ import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import useSpeechToText from "react-hook-speech-to-text";
 import { StopCircle } from "lucide-react";
-import { toast } from "sonner";
+import { useToast } from "@/components/ui/use-toast"
 import { chatSession } from "@/utils/GeminiAiModel";
 import { db } from "@/utils/db";
 import { UserAnswer } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 function RecordAnswerSection({
   mockQuestions,
@@ -19,6 +20,7 @@ function RecordAnswerSection({
   interviewData,
   setActiveQuestionIndex,
 }) {
+  const { toast } = useToast()
   const [userAnswer, setUserAnswer] = useState("");
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
@@ -86,7 +88,12 @@ function RecordAnswerSection({
     });
 
     if (resp) {
-      toast("Answer recorded successfully !!!");
+      toast({
+        className: cn(
+          'top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4'
+        ),
+        title: "Answer recorded successfully !!",
+      })
       setUserAnswer("");
       setResults([]);
     }
