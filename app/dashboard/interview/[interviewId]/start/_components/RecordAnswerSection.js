@@ -126,7 +126,7 @@ function RecordAnswerSection({
             "Record Answer"
           )}
         </Button>
-        <div className="flex gap-5 justify-end mb-5 md:mb-0 lg:mb-0">
+        <div className="flex gap-5 justify-end mb-16 md:mb-0 lg:mb-0">
           {activeQuestionIndex > 0 && (
             <Button
               onClick={() => setActiveQuestionIndex(activeQuestionIndex - 1)}
