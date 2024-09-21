@@ -26,7 +26,7 @@ function layout({ children }) {
                 width={30}
                 height={30}
               />{" "}
-              <p className="text-white text-xs">Made by Rohit</p>
+              <p className="text-white text-xs">Made by Exception</p>
             </PopoverTrigger>
             <PopoverContent className="w-full">
               <Link
