@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎯 PrepPeak: Interview Practice Application
 
-## Getting Started
+**PrepPeak** is a web application designed to help users **practice for interviews**.  
+It leverages **speech-to-text technology** to record answers, providing **immediate AI feedback**.  
+The application guides users through a series of mock interview questions, offering a **comprehensive practice experience**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Technology Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Layer         | Technologies |
+|---------------|--------------|
+| **Frontend**  | React, Next.js, Tailwind CSS, Radix UI, Lucide-React |
+| **Backend** | Drizzle ORM, Neon Database, Google's Generative AI |
+| **Database**  | Neon Database (serverless) + Drizzle ORM |
+| **AI Model**  | Google's Generative AI |
+| **Deployment** | Vercel |
+| **Speech-to-Text** | react-hook-speech-to-text |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🔄 Workflow
 
-## Learn More
+### **1️⃣ User Interface**
+- Built with **React** and styled with **Tailwind CSS**.
+- **Radix UI components** ensure accessibility and smooth UX.
 
-To learn more about Next.js, take a look at the following resources:
+### **2️⃣ Question Presentation**
+- Displays **mock interview questions** one at a time.
+- Navigation via **Previous** / **Next** buttons.
+- **Text-to-Speech** allows users to listen to questions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **3️⃣ Answer Recording**
+- Records via **microphone** using `react-hook-speech-to-text`.
+- Webcam provides **visual feedback** during recording.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### **4️⃣ AI Feedback**
+- After a minimum length, the answer is sent to **Google Generative AI**.
+- AI processes the answer in the context of the question.
+- Returns **JSON feedback** with:
+  - Rating
+  - Suggestions for improvement
 
-## Deploy on Vercel
+### **5️⃣ Data Storage**
+- Stores:
+  - User’s answer
+  - Correct answer
+  - AI’s feedback
+  - Timestamp  
+- Data stored in **Neon Database** via **Drizzle ORM**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **6️⃣ Feedback Presentation** *(implied)*
+- After completing all questions:
+  - Displays **summary** of answers, AI feedback, and correct answers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🏗️ Overall Architecture
+
+- **Client (Frontend)** – Next.js app for UI & interaction.
+- **Serverless Backend** – Handles:
+  - Database interactions
+  - AI communication
+- **Database** – Stores persistent interview data.
+- **AI Model** – Provides **real-time feedback**.
+- **Deployment** – Hosted on **Vercel** for performance and scalability.
+
+---
+
+## 💡 Author
+**Rohit** – [LinkedIn](https://www.linkedin.com/in/rohit005) | [Portfolio](https://portfolio.rohit005.site) | [Email](mailto:rohitdev005005@gmail.com)
