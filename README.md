@@ -68,4 +68,4 @@ The application guides users through a series of mock interview questions, offer
 ---
 
 ## 💡 Author
-**Rohit** – [LinkedIn](https://www.linkedin.com/in/rohit005) | [Portfolio](https://portfolio.rohit005.site) | [Email](mailto:rohitdev005005@gmail.com)
+**Rohit** – [LinkedIn](https://www.linkedin.com/in/rohit-dev005/) | [Portfolio](https://portfolio.rohit005.site) | [Email](mailto:rohitdev005005@gmail.com)
